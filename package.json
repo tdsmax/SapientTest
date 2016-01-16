@@ -1,0 +1,10 @@
+{
+    "name": "bullsfirst",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "ws --port=3000"
+    },
+    "devDependencies": {
+        "local-web-server": "^0.5.23"
+    }
+}

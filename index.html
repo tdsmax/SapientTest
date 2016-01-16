@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulls First</title>
+
+    <link rel="stylesheet" href="app.css">
+
+    <!-- Libs -->
+    <script type= "text/javascript" src="angular.js"></script>
+
+    <!-- Application -->
+    <script type= "text/javascript" src="app.js"></script>
+    <script type= "text/javascript" src="AccountsController.js"></script>
+    <script type="text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script type="text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    
+</head>
+<body ng-app="bullsfirst">
+
+<!-- Header -->
+<header id="header">
+    <nav class="logo">
+        <hgroup>
+            <h1>Bulls First</h1>
+        </hgroup>
+
+        <div class="subtitle">Calling all bull markets</div>
+    </nav>
+
+    <nav class="actions">
+        <button>Trade</button>
+        <button>Transfer</button>
+    </nav>
+</header>
+
+<!-- Content -->
+<content id="content" ng-controller="AccountsController">
+    <section class="left-section">
+        <header class="header">
+            <strong>Accounts</strong>
+
+            <div class="actions">
+                <button ng-click="addAccount()">Add Account</button>
+                <button ng-click="totalCost()">Refresh</button>
+            </div>
+        </header>
+        <article>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Market Value</th>
+                    <th>Cash</th>
+                    <th>Legend</th>
+                </tr>
+
+                <tr ng-repeat="row in rows">
+                    <td align="center">{{ row.name }}</td>
+                    <td align="center">{{ row.marketValue | currency }}</td>
+                    <td align="center">{{ row.cash | currency }}</td>
+                    <td ng-click="showDetail(row)" align="center">
+                        <div class="legend" style="background-color: {{ row.legend }}"></div>
+                    </td>
+                </tr>
+
+                <tr class="totals">
+                    <td></td>
+                    <td align="center">
+                        <strong>{{ totals.marketValue | currency }}</strong>
+                    </td>
+                    <td align="center">
+                        <strong>{{ totals.cash | currency }}</strong>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+        <article>
+    </section>
+
+    <section class="right-section">
+        <div  id="chartContainer" style="height: 300px; width: 100%;"></div>
+       <!--  <figure>
+            <img class="chart" src="chart.png" alt="Chart">
+            <figcaption>Click on an account to view positions</figcaption>
+        </figure> -->
+
+    </section>
+
+</content>
+
+</body>
+</html>
