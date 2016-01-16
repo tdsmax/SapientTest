@@ -6,11 +6,15 @@ body {
 }
 
 button {
-    width: 100px;
-    background: orange;
-    border: 1px solid darkred;
-    margin-right: 10px;
-    box-shadow: 1px 1px 3px #333;
+    color: white;
+    background-color: #F04100;
+    font-size: 14px;
+    height: 75px;
+    line-height: 18px;
+    text-align: center;
+    width: 110px;
+    border: 2px solid rgba(20,20,20,0.2);
+    margin-left: 2px;
 }
 
 table {
@@ -34,12 +38,17 @@ img {
     padding: 30px 20px;
 }
 
-#header .logo h1 {
-    margin: 3px 0;
+#header .logo  h1{
+    background-image: url("logo.png");
+    background-size: 145px 69px;
+    height: 69px;
+    width: 145px;
 }
 
-#header .logo .subtitle {
-    font-size: 0.8rem;
+#header .logo h2 {
+    font-style: italic;
+    margin: 0px 0px 0px 20px;
+    text-align: right;
 }
 
 #header .actions {
@@ -103,4 +112,24 @@ table th {
 
 .canvasjs-chart-credit{
     display: none;
+}
+
+.flags-canada, .flags-mexico, .flags-usa {
+  background-image: url('../images/flags.png');
+  background-repeat: no-repeat;
+}
+
+.flags-canada {
+  height: 128px;
+  background-position: -5px -5px;
+}
+
+.flags-usa {
+  height: 135px;
+  background-position: -5px -143px;
+}
+
+.flags-mexico {
+  height: 147px;
+  background-position: -5px -288px;
 }

@@ -22,10 +22,10 @@
 <header id="header">
     <nav class="logo">
         <hgroup>
-            <h1>Bulls First</h1>
+            <h1></h1>
+            <h2>Calling all bull markets</h2>
         </hgroup>
 
-        <div class="subtitle">Calling all bull markets</div>
     </nav>
 
     <nav class="actions">
@@ -42,7 +42,7 @@
 
             <div class="actions">
                 <button ng-click="addAccount()">Add Account</button>
-                <button ng-click="totalCost()">Refresh</button>
+                <button ng-click="estimatedCost()">Refresh</button>
             </div>
         </header>
         <article>
@@ -58,7 +58,7 @@
                     <td align="center">{{ row.name }}</td>
                     <td align="center">{{ row.marketValue | currency }}</td>
                     <td align="center">{{ row.cash | currency }}</td>
-                    <td ng-click="showDetail(row)" align="center">
+                    <td align="center">
                         <div class="legend" style="background-color: {{ row.legend }}"></div>
                     </td>
                 </tr>
@@ -79,12 +79,7 @@
     </section>
 
     <section class="right-section">
-        <div  id="chartContainer" style="height: 300px; width: 100%;"></div>
-       <!--  <figure>
-            <img class="chart" src="chart.png" alt="Chart">
-            <figcaption>Click on an account to view positions</figcaption>
-        </figure> -->
-
+        <div  id="chartContainer" style=" width: 100%;"></div>
     </section>
 
 </content>
